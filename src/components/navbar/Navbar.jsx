@@ -17,6 +17,11 @@ export default function Navbar() {
       path : '/posts'
 
     },
+    {
+      title : "Meals",
+      path : '/meals'
+
+    },
    
   ]
 
