@@ -2,7 +2,7 @@
 import React, { useEffect, useState }  from 'react'
 
 const Meals = () => {
-  const [search , setSearch] = useState("");
+  const [search , setSearch] = useState("a");
   const [meals , setMeals] = useState([]);
 
   const loadData = async() => {
@@ -27,7 +27,7 @@ const Meals = () => {
       <input 
       onChange={handler}
       type="text" placeholder='search meals...'/>
-      <button className='bg-blue-700 p-2 text-white rounded-md font-bold'>Search</button>
+      <button onClick={() => loadData()} className='bg-blue-700 p-2 text-white rounded-md font-bold'>Search</button>
     </div>
   )
 }
