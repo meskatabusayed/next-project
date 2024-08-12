@@ -10,6 +10,8 @@ export const metadata = {
   keywords : ["meal" , "meals done" , "Meskat"]
 };
 
+
+
 const page = () => {
   return (
     <div className='p-12'>

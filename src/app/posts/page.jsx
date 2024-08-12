@@ -9,6 +9,7 @@ const getPosts = async () => {
 
 }
 
+
 const page = async () => {
     const postData = await getPosts();
     
