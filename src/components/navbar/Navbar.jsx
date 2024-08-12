@@ -22,6 +22,11 @@ export default function Navbar() {
       path : '/meals'
 
     },
+    {
+      title : "Gallery",
+      path : '/gallery'
+
+    },
    
   ]
 
