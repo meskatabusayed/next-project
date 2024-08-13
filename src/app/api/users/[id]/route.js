@@ -11,6 +11,15 @@ export async function PATCH(request , {params}){
     })
 }
 
+//ata aktu bujte hobe...
+export async function DELETE(request , {params}){
+    const newComments = comments.filter((c) => c.id !== parseInt(params.id));
+    return Response.json({
+        message : "comment Deleted",
+        newComments
+    })
+}
+
 
 const comments = [
     {
