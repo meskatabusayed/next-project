@@ -10,6 +10,15 @@ const nextConfig = {
            },
         ],
      },
+     redirects : async () => {
+      return [
+         {
+            source : "/gallery",
+            destination : "/posts",
+            permanent : true
+         }
+        ]
+     }
 };
 
 export default nextConfig;
