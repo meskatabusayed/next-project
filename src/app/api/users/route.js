@@ -4,19 +4,32 @@ export async function GET(){
         comments
     })
 }
+export async function POST(request){
+    const newComment = await request.json();
+    comments.push({
+        id : comments.length + 1,
+        text : newComment.text
+    })
+
+
+    return Response.json({
+        message : "new comment added",
+        comments
+    })
+}
 
 
 const comments = [
     {
         id : 1,
-        message : "comment 1"
+        text : "comment 1"
     },
     {
         id : 2,
-        message : "comment 2"
+        text : "comment 2"
     },
     {
         id : 3,
-        message : "comment 3"
+        text : "comment 3"
     },
 ]
