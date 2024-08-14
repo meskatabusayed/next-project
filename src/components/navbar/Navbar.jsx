@@ -30,6 +30,11 @@ export default function Navbar() {
       path : '/gallery'
 
     },
+    {
+      title : "About",
+      path : '/about'
+
+    },
    
   ]
 
