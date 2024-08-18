@@ -1,5 +1,5 @@
 "use client"
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
@@ -61,10 +61,10 @@ export default function Navbar() {
             }
         </ul>
         {
-          session.status === 'authenticated' ? <button onClick={handler} className='bg-blue-700 p-2 text-white rounded-md font-bold'>
-          logout
-        </button> : <button onClick={handler} className='bg-red-700 p-2 text-white rounded-md font-bold'>
+          session.status !== 'authenticated' ? <button onClick={handler} className='bg-blue-700 p-2 text-white rounded-md font-bold'>
           login
+        </button> : <button  onClick={() => signOut()} className='bg-red-700 p-2 text-white rounded-md font-bold'>
+          logout
         </button>
         }
 

@@ -83,9 +83,10 @@ const users = [
     },
     {
         id : 3,
-        name : "Name",
+        name : "AbuSayed",
         email : "m3@gmail.com",
-        password: "123"
+        type : "normal user",
+        password: "1238"
     },
 
 ]
