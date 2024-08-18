@@ -8,7 +8,7 @@ export default function Navbar() {
   const pathName = usePathname();
   const router = useRouter();
   const session = useSession();
-  console.log(session);
+  // console.log(session);
   const links = [
     {
       title : "Home",
