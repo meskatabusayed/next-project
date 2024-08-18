@@ -3,8 +3,10 @@ import credentialsProvider from "next-auth/providers/credentials"
 
 export const authOptions = 
     {
+        secret : process.env.NEXT_PUBLIC_AUTH_SECRET,
         session : {
-            strategy : "jwt"
+            strategy : "jwt",
+            maxAge : 30 * 24 * 60 * 60
         },
         providers : [
             credentialsProvider({
@@ -42,7 +44,21 @@ export const authOptions =
                 }
     
             })
-        ]
+        ],
+        callbacks : {
+            async jwt({ token, account, user }) {
+                // Persist the OAuth access_token and or the user id to the token right after signin
+                if (account) {
+                  token.type = user.type;
+                  
+                }
+                return token
+              },
+            async session({ session,  token }) {
+                session.user.type = token.type
+                return session
+              },
+        }
     
     }
 
@@ -54,12 +70,14 @@ const users = [
     {
         id : 1,
         name : "Name",
+        type : 'admin',
         email : "mmt@gmail.com",
         password: "1234"
     },
     {
         id : 2,
-        name : "Name",
+        name : "meskat",
+        type : "Modarator",
         email : "ms@gmail.com",
         password: "1235"
     },

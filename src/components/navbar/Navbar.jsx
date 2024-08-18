@@ -8,7 +8,7 @@ export default function Navbar() {
   const pathName = usePathname();
   const router = useRouter();
   const session = useSession();
-  // console.log(session);
+  console.log(session);
   const links = [
     {
       title : "Home",
@@ -39,7 +39,7 @@ export default function Navbar() {
   ]
 
   const handler = () => {
-    router.push('/login');
+    router.push('/api/auth/signin');
   }
 
   if(pathName.includes('dashboard')){
@@ -62,11 +62,19 @@ export default function Navbar() {
         </ul>
         {
           session.status === 'authenticated' ? <button onClick={handler} className='bg-blue-700 p-2 text-white rounded-md font-bold'>
-          login
-        </button> : <button onClick={handler} className='bg-red-700-700 p-2 text-black rounded-md font-bold'>
           logout
+        </button> : <button onClick={handler} className='bg-red-700 p-2 text-white rounded-md font-bold'>
+          login
         </button>
         }
+
+        <div>
+          <h6>{session?.data?.user?.name}</h6>
+          <br />
+          <h6>{session?.data?.user?.type}</h6>
+          
+
+        </div>
       </nav>
     
   )
