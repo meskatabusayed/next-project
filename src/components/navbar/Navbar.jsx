@@ -60,6 +60,11 @@ export default function Navbar() {
               links?.map((link) => <Link className={`${pathName === link.path && "text-red-500"}`} key={link.path} href={link.path}>{link.title}</Link>)
             }
         </ul>
+        <Link href={'api/auth/signup'}>
+        <button className='bg-blue-700 mr-3 p-2 text-white rounded-md font-bold'>
+          SignUp
+        </button>
+        </Link>
         {
           session.status !== 'authenticated' ? <button onClick={handler} className='bg-blue-700 p-2 text-white rounded-md font-bold'>
           login

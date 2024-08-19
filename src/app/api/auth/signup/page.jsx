@@ -5,7 +5,7 @@ const page = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
       <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Register</h2>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
             Name
